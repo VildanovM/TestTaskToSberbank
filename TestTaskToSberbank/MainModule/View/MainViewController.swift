@@ -19,8 +19,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        view.backgroundColor = .black
-        networkTableview.backgroundColor = .black
+        view.backgroundColor = .white
         let safeAreaView = view.safeAreaLayoutGuide
         networkTableview.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.reusedId)
         view.addSubview(networkTableview)
@@ -34,6 +33,11 @@ class MainViewController: UIViewController {
         networkTableview.trailingAnchor.constraint(equalTo: safeAreaView.trailingAnchor).isActive = true
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
 
 
