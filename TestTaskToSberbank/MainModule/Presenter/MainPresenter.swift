@@ -43,12 +43,12 @@ class MainPresenter: MainViewPresenterProtocol {
      }
     
     func getComments() {
-        networkService.getComments { [weak self] result in
+        networkService.getFilms { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
-                case .success(let comments):
-                    self.comments = comments
+                case .success(let films):
+                    self.comments = films.
                     self.view?.success()
                 case .failure(let error):
                     self.view?.failure(error: error)

@@ -20,6 +20,10 @@
 		9706EE7624F9764700653AAA /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7524F9764700653AAA /* NetworkService.swift */; };
 		9706EE7A24F9767E00653AAA /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7924F9767E00653AAA /* DetailPresenter.swift */; };
 		9706EE7D24F976C600653AAA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7C24F976C600653AAA /* DetailViewController.swift */; };
+		9735FFDE24F986D8001752DC /* StarWarsFilmography.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFDC24F986D8001752DC /* StarWarsFilmography.xcdatamodeld */; };
+		9735FFE024F98BCC001752DC /* StarWarsFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFDF24F98BCC001752DC /* StarWarsFilm.swift */; };
+		9735FFE324F98EBD001752DC /* StackCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE224F98EBD001752DC /* StackCoreData.swift */; };
+		9735FFE724FA6831001752DC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE624FA6831001752DC /* DataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		9706EE7524F9764700653AAA /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		9706EE7924F9767E00653AAA /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		9706EE7C24F976C600653AAA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9735FFDD24F986D8001752DC /* StarWarsFilmography.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StarWarsFilmography.xcdatamodel; sourceTree = "<group>"; };
+		9735FFDF24F98BCC001752DC /* StarWarsFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsFilm.swift; sourceTree = "<group>"; };
+		9735FFE224F98EBD001752DC /* StackCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoreData.swift; sourceTree = "<group>"; };
+		9735FFE624FA6831001752DC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 				9706EE5224F9744E00653AAA /* SceneDelegate.swift */,
 				9706EE6A24F9753000653AAA /* Builder */,
 				9706EE6724F9750D00653AAA /* Navigations */,
+				9735FFE124F98EA3001752DC /* ModelManager */,
 				9706EE6424F974E000653AAA /* Model */,
 				9706EE7424F9762F00653AAA /* Services */,
 				9706EE7124F975BD00653AAA /* MainModule */,
@@ -89,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				9706EE6524F974F500653AAA /* Model.swift */,
+				9735FFDF24F98BCC001752DC /* StarWarsFilm.swift */,
+				9735FFDC24F986D8001752DC /* StarWarsFilmography.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +179,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9735FFE124F98EA3001752DC /* ModelManager */ = {
+			isa = PBXGroup;
+			children = (
+				9735FFE224F98EBD001752DC /* StackCoreData.swift */,
+				9735FFE624FA6831001752DC /* DataProvider.swift */,
+			);
+			path = ModelManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,13 +260,17 @@
 			files = (
 				9706EE7D24F976C600653AAA /* DetailViewController.swift in Sources */,
 				9706EE5524F9744E00653AAA /* MainViewController.swift in Sources */,
+				9735FFDE24F986D8001752DC /* StarWarsFilmography.xcdatamodeld in Sources */,
 				9706EE5124F9744E00653AAA /* AppDelegate.swift in Sources */,
 				9706EE6924F9752100653AAA /* Router.swift in Sources */,
+				9735FFE324F98EBD001752DC /* StackCoreData.swift in Sources */,
 				9706EE7A24F9767E00653AAA /* DetailPresenter.swift in Sources */,
 				9706EE7324F975DE00653AAA /* MainPresenter.swift in Sources */,
 				9706EE7624F9764700653AAA /* NetworkService.swift in Sources */,
+				9735FFE024F98BCC001752DC /* StarWarsFilm.swift in Sources */,
 				9706EE5324F9744E00653AAA /* SceneDelegate.swift in Sources */,
 				9706EE6624F974F500653AAA /* Model.swift in Sources */,
+				9735FFE724FA6831001752DC /* DataProvider.swift in Sources */,
 				9706EE7024F975AC00653AAA /* TableViewCell.swift in Sources */,
 				9706EE6C24F9755100653AAA /* ModuleBuilder.swift in Sources */,
 			);
@@ -438,6 +462,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9735FFDC24F986D8001752DC /* StarWarsFilmography.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9735FFDD24F986D8001752DC /* StarWarsFilmography.xcdatamodel */,
+			);
+			currentVersion = 9735FFDD24F986D8001752DC /* StarWarsFilmography.xcdatamodel */;
+			path = StarWarsFilmography.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9706EE4524F9744E00653AAA /* Project object */;
 }

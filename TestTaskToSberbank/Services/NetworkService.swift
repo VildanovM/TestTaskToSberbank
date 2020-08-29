@@ -9,14 +9,14 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func getComments(completion: @escaping (Result<[Comment]?, Error>) -> Void)
+    func getFilms(completion: @escaping (Result<[[String: Any]]?, Error>) -> Void)
 }
 
 class NetworkService: NetworkServiceProtocol {
     
-    func getComments(completion: @escaping (Result<[Comment]?, Error>) -> Void) {
+    func getFilms(completion: @escaping (Result<[[String: Any]]?, Error>) -> Void){
+        let urlString = "https://swapi.dev/api/films/"
         
-        let urlString = "https://jsonplaceholder.typicode.com/comments"
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
@@ -28,9 +28,12 @@ class NetworkService: NetworkServiceProtocol {
             }
             
             do {
-                
-                let objectJSON = try JSONDecoder().decode([Comment].self, from: data!)
-                completion(.success(objectJSON))
+//                let objectJSON = try JSONDecoder().decode([Comment].self, from: data!)
+//                completion(.success(objectJSON))
+                guard let data = data else { return }
+                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+                guard let jsonDictionary = jsonObject as? [String: Any], let result = jsonDictionary["results"] as? [[String: Any]] else { return }
+                completion(.success(result))
                 
             } catch {
                 
@@ -39,5 +42,8 @@ class NetworkService: NetworkServiceProtocol {
             }
         }.resume()
     }
+    
+    
+        
     
 }
