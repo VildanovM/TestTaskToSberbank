@@ -15,7 +15,7 @@ class StackCoreData {
     private init() {}
     
     lazy var persistentContainer: NSPersistentContainer = {
-       let container = NSPersistentContainer(name: "StarWars")
+       let container = NSPersistentContainer(name: "Film")
         
         container.loadPersistentStores(completionHandler: { (_, error) in
             guard let error = error as NSError? else { return }

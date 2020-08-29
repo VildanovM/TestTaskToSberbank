@@ -11,36 +11,35 @@ import CoreData
 class DataProvider {
     
     private let persistentContainer: NSPersistentContainer
-    private let filmsRepository: NetworkService
+    private let repository: NetworkService
     
     var viewContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
-    init(persistentContainer: NSPersistentContainer, filmsRepository: NetworkService) {
+    init(persistentContainer: NSPersistentContainer, repository: NetworkService) {
         self.persistentContainer = persistentContainer
-        self.filmsRepository = filmsRepository
+        self.repository = repository
     }
     
     func fetchFilms(completion: @escaping(Error?) -> Void) {
-        filmsRepository.getFilms() { [weak self] result in
-            
-            guard let self = self else { return }
-            
-            let tempJson: [[String: Any]]?
-            
-            switch result {
-            case .failure(let error): print(error.localizedDescription)
-            case .success(let data): tempJson = data
+        repository.getFilms() { jsonDictionary, error in
+            if let error = error {
+                completion(error)
+                return
             }
             
-            guard let result = tempJson else { return }
+            guard let jsonDictionary = jsonDictionary else {
+                let error = NSError(domain: dataErrorDomain, code: DataErrorCode.wrongDataFormat.rawValue, userInfo: nil)
+                completion(error)
+                return
+            }
             
             let taskContext = self.persistentContainer.newBackgroundContext()
             taskContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             taskContext.undoManager = nil
             
-            _ = self.syncFilms(jsonDictionary: result, taskContext: taskContext)
+            _ = self.syncFilms(jsonDictionary: jsonDictionary, taskContext: taskContext)
             
             completion(nil)
         }
@@ -72,13 +71,13 @@ class DataProvider {
             // Create new records.
             for filmDictionary in jsonDictionary {
                 
-                guard let film = NSEntityDescription.insertNewObject(forEntityName: "StarWarsFilms", into: taskContext) as? StarWarsFilm else {
+                guard let film = NSEntityDescription.insertNewObject(forEntityName: "Film", into: taskContext) as? Film else {
                     print("Error: Failed to create a new Film object!")
                     return
                 }
                 
                 do {
-                    try film.map(jsonData: filmDictionary)
+                    try film.update(with: filmDictionary)
                 } catch {
                     print("Error: \(error)\nThe quake object will be deleted.")
                     taskContext.delete(film)
@@ -99,4 +98,3 @@ class DataProvider {
         return successfull
     }
 }
-

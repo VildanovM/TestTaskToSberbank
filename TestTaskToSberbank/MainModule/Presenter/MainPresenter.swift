@@ -7,58 +7,52 @@
 //
 
 import Foundation
+import CoreData
 
-protocol MainViewProtocol: class {
+protocol MainViewProtocol: AnyObject {
     
     func success()
     func failure(error: Error)
     
 }
 
-protocol MainViewPresenterProtocol: class {
-    
-    init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
-    func getComments()
-    var comments: [Comment]? { get set }
-    func tapOnTheComment(comment: Comment?)
+protocol MainViewPresenterProtocol: AnyObject {
+    var dataProvider: DataProvider? { get set }
+    func getFilms()
+    var films: [StarWars]? { get set }
+//    func tapOnTheFilm(film: StarWarsFilm?)
     
 }
 
 class MainPresenter: MainViewPresenterProtocol {
     
-    var comments: [Comment]?
+    var dataProvider: DataProvider?
+    
+    
+    
+    var films: [StarWars]?
     var router: RouterProtocol?
     weak var view: MainViewProtocol?
-    let networkService: NetworkServiceProtocol!
+//    var dataProvider: DataProvider?
     
-    required init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
+    required init(view: MainViewProtocol, dataProvider: DataProvider, router: RouterProtocol) {
         self.view = view
-        self.networkService = networkService
         self.router = router
-        getComments()
+        self.dataProvider = dataProvider
     }
     
-    func tapOnTheComment(comment: Comment?) {
-        router?.showDetail(comment: comment)
-     }
+//    func tapOnTheFilm(film: StarWarsFilm?) {
+//        router?.showDetail(film: film)
+//    }
     
-    func getComments() {
-        networkService.getFilms { [weak self] result in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let films):
-                    self.comments = films.
-                    self.view?.success()
-                case .failure(let error):
-                    self.view?.failure(error: error)
-                    
-                }
-            }
+    func getFilms() {
+        guard let dataProvider = dataProvider else { return }
+        dataProvider.fetchFilms { (error) in
+            // Handle Error by displaying it in UI
         }
     }
-    
-    
-    
 }
+
+
+
 

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9706EE5124F9744E00653AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE5024F9744E00653AAA /* AppDelegate.swift */; };
 		9706EE5324F9744E00653AAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE5224F9744E00653AAA /* SceneDelegate.swift */; };
-		9706EE5524F9744E00653AAA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE5424F9744E00653AAA /* MainViewController.swift */; };
 		9706EE5A24F9745200653AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9706EE5924F9745200653AAA /* Assets.xcassets */; };
 		9706EE5D24F9745200653AAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9706EE5B24F9745200653AAA /* LaunchScreen.storyboard */; };
 		9706EE6624F974F500653AAA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE6524F974F500653AAA /* Model.swift */; };
@@ -20,17 +19,17 @@
 		9706EE7624F9764700653AAA /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7524F9764700653AAA /* NetworkService.swift */; };
 		9706EE7A24F9767E00653AAA /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7924F9767E00653AAA /* DetailPresenter.swift */; };
 		9706EE7D24F976C600653AAA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7C24F976C600653AAA /* DetailViewController.swift */; };
-		9735FFDE24F986D8001752DC /* StarWarsFilmography.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFDC24F986D8001752DC /* StarWarsFilmography.xcdatamodeld */; };
-		9735FFE024F98BCC001752DC /* StarWarsFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFDF24F98BCC001752DC /* StarWarsFilm.swift */; };
+		9735FFDE24F986D8001752DC /* Film.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFDC24F986D8001752DC /* Film.xcdatamodeld */; };
+		9735FFE024F98BCC001752DC /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFDF24F98BCC001752DC /* Film.swift */; };
 		9735FFE324F98EBD001752DC /* StackCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE224F98EBD001752DC /* StackCoreData.swift */; };
 		9735FFE724FA6831001752DC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE624FA6831001752DC /* DataProvider.swift */; };
+		9735FFE924FA77B2001752DC /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE824FA77B2001752DC /* MainTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9706EE4D24F9744E00653AAA /* TestTaskToSberbank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskToSberbank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9706EE5024F9744E00653AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9706EE5224F9744E00653AAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9706EE5424F9744E00653AAA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9706EE5924F9745200653AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9706EE5C24F9745200653AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9706EE5E24F9745200653AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,9 +42,10 @@
 		9706EE7924F9767E00653AAA /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		9706EE7C24F976C600653AAA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9735FFDD24F986D8001752DC /* StarWarsFilmography.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StarWarsFilmography.xcdatamodel; sourceTree = "<group>"; };
-		9735FFDF24F98BCC001752DC /* StarWarsFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsFilm.swift; sourceTree = "<group>"; };
+		9735FFDF24F98BCC001752DC /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		9735FFE224F98EBD001752DC /* StackCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoreData.swift; sourceTree = "<group>"; };
 		9735FFE624FA6831001752DC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		9735FFE824FA77B2001752DC /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				9706EE6524F974F500653AAA /* Model.swift */,
-				9735FFDF24F98BCC001752DC /* StarWarsFilm.swift */,
-				9735FFDC24F986D8001752DC /* StarWarsFilmography.xcdatamodeld */,
+				9735FFDF24F98BCC001752DC /* Film.swift */,
+				9735FFDC24F986D8001752DC /* Film.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,7 +123,7 @@
 		9706EE6D24F9756700653AAA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9706EE5424F9744E00653AAA /* MainViewController.swift */,
+				9735FFE824FA77B2001752DC /* MainTableViewController.swift */,
 				9706EE6F24F975AC00653AAA /* TableViewCell.swift */,
 			);
 			path = View;
@@ -259,15 +259,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9706EE7D24F976C600653AAA /* DetailViewController.swift in Sources */,
-				9706EE5524F9744E00653AAA /* MainViewController.swift in Sources */,
-				9735FFDE24F986D8001752DC /* StarWarsFilmography.xcdatamodeld in Sources */,
+				9735FFDE24F986D8001752DC /* Film.xcdatamodeld in Sources */,
 				9706EE5124F9744E00653AAA /* AppDelegate.swift in Sources */,
+				9735FFE924FA77B2001752DC /* MainTableViewController.swift in Sources */,
 				9706EE6924F9752100653AAA /* Router.swift in Sources */,
 				9735FFE324F98EBD001752DC /* StackCoreData.swift in Sources */,
 				9706EE7A24F9767E00653AAA /* DetailPresenter.swift in Sources */,
 				9706EE7324F975DE00653AAA /* MainPresenter.swift in Sources */,
 				9706EE7624F9764700653AAA /* NetworkService.swift in Sources */,
-				9735FFE024F98BCC001752DC /* StarWarsFilm.swift in Sources */,
+				9735FFE024F98BCC001752DC /* Film.swift in Sources */,
 				9706EE5324F9744E00653AAA /* SceneDelegate.swift in Sources */,
 				9706EE6624F974F500653AAA /* Model.swift in Sources */,
 				9735FFE724FA6831001752DC /* DataProvider.swift in Sources */,
@@ -464,13 +464,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9735FFDC24F986D8001752DC /* StarWarsFilmography.xcdatamodeld */ = {
+		9735FFDC24F986D8001752DC /* Film.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				9735FFDD24F986D8001752DC /* StarWarsFilmography.xcdatamodel */,
 			);
 			currentVersion = 9735FFDD24F986D8001752DC /* StarWarsFilmography.xcdatamodel */;
-			path = StarWarsFilmography.xcdatamodeld;
+			path = Film.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -9,16 +9,12 @@
 import Foundation
 
 
-struct Person {
-    let firstName: String
-    let lastName: String
-}
-
-struct Comment: Decodable {
-    var postId: Int
-    var id: Int
-    var name: String
-    var email: String
-    var body: String
+struct StarWars {
+    var producer: String
+    var title: String
+    var director: String
+    var openingCrawl: String
+    var episodeId: NSNumber
+    var releaseDate: Date
 }
 

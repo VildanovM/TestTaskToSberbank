@@ -15,7 +15,7 @@ protocol RouterMain {
 
 protocol RouterProtocol: RouterMain {
     func initialViewController()
-    func showDetail(comment: Comment?)
+//    func showDetail(comment: Comment?)
     func popToRoot()
 }
 
@@ -36,19 +36,20 @@ class Router: RouterProtocol {
         }
     }
     
-    func showDetail(comment: Comment?) {
-        if let navigationController = navigationController {
-            guard let detailViewController = assemblyBuilder?.createDetailModule(comment: comment, router: self) else { return }
-                  navigationController.pushViewController(detailViewController, animated: true)
-              }
-    }
-    
     func popToRoot() {
         if let navigationController = navigationController {
                   navigationController.popToRootViewController(animated: true)
               }
         
     }
+    
+//    func showDetail(comment: Comment?) {
+//        if let navigationController = navigationController {
+//            guard let detailViewController = assemblyBuilder?.createDetailModule(comment: comment, router: self) else { return }
+//                  navigationController.pushViewController(detailViewController, animated: true)
+//              }
+//    }
+    
     
     
 }
