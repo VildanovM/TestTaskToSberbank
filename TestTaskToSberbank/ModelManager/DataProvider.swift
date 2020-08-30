@@ -27,8 +27,7 @@ class DataProvider {
         self.persistentContainer = persistentContainer
         self.repository = repository
     }
-    
-    
+
     private func syncFilms(jsonDictionary: [[String: Any]], taskContext: NSManagedObjectContext) -> Bool {
         var successfull = false
         taskContext.performAndWait {
@@ -38,28 +37,21 @@ class DataProvider {
             
             let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: matchingEpisodeRequest)
             batchDeleteRequest.resultType = .resultTypeObjectIDs
-            
-            
             do {
                 let batchDeleteResult = try taskContext.execute(batchDeleteRequest) as? NSBatchDeleteResult
-                
                 if let deletedObjectIDs = batchDeleteResult?.result as? [NSManagedObjectID] {
-                    NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIDs],
-                                                        into: [self.persistentContainer.viewContext])
+                    NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIDs], into: [self.persistentContainer.viewContext])
                 }
             } catch {
                 print("Error: \(error)\nCould not batch delete existing records.")
                 return
             }
-            
             // Создает новую запись
             for filmDictionary in jsonDictionary {
-                
                 guard let film = NSEntityDescription.insertNewObject(forEntityName: "Film", into: taskContext) as? Film else {
                     print("Error: Failed to create a new Film object!")
                     return
                 }
-                
                 do {
                     try film.update(with: filmDictionary)
                 } catch {
@@ -67,7 +59,6 @@ class DataProvider {
                     taskContext.delete(film)
                 }
             }
-            
             // Сохраняет все изменения
             if taskContext.hasChanges {
                 do {
@@ -92,7 +83,6 @@ extension DataProvider: DataProviderProtocol {
                 completion(error)
                 return
             }
-            
             guard let jsonDictionary = jsonDictionary else {
                 let error = NSError(domain: dataErrorDomain, code: DataErrorCode.wrongDataFormat.rawValue, userInfo: nil)
                 completion(error)

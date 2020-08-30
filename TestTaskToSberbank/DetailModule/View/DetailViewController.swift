@@ -9,7 +9,6 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
     // MARK: - Cвойства
     var presenter: DetailViewPresenterProtocol?
     // MARK: - Приватные свойства
@@ -20,9 +19,6 @@ class DetailViewController: UIViewController {
     private let releaseDateLabel = UILabel()
     private var filmImage = UIImageView()
     private let popButton = UIButton()
-    
-    
-    
     // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +27,11 @@ class DetailViewController: UIViewController {
         designDetailView()
         stackViewCustomization()
         setConstraint()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         let arrayOfLabels = [producerLabel, directorLabel, releaseDateLabel]
-        
         arrayOfLabels.forEach {
             $0.alpha = 0
         }
@@ -56,12 +49,9 @@ class DetailViewController: UIViewController {
         popButton.backgroundColor = .black
         popButton.layer.cornerRadius = 10
         popButton.layer.masksToBounds = true
-        
         setShadowToImage()
-        
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 20)
-        
         producerLabel.numberOfLines = 0
         
         
@@ -78,24 +68,18 @@ class DetailViewController: UIViewController {
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.preservesSuperviewLayoutMargins = true
         view.addSubview(stackView)
-        
         [filmImage, titleLabel, producerLabel, directorLabel, releaseDateLabel, popButton].forEach { stackView.addArrangedSubview($0)
         }
     }
     
     
     private func setConstraint() {
-        
         [stackView, filmImage].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
         stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
         stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
         stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
-        
-        
         filmImage.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.6).isActive = true
-        
-        
     }
     
     
@@ -103,7 +87,6 @@ class DetailViewController: UIViewController {
         guard let presenter = presenter else { return }
         presenter.tap()
     }
-    
 }
 
 // MARK: - Реализация протокола
@@ -115,8 +98,6 @@ extension DetailViewController: DetailViewProtocol {
         producerLabel.text = "Producer: " + film.producer
         directorLabel.text = "Director: " + film.director
         releaseDateLabel.text = "Release date: " + film.releaseDate
-        
     }
-    
 }
 

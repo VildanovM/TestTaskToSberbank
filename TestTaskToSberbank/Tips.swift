@@ -8,6 +8,8 @@
 
 import Foundation
 
+let dataErrorDomain = "dataErrorDomain"
+
 enum DataErrorCode: NSInteger {
     case networkUnavailable = 501
     case wrongDataFormat = 502

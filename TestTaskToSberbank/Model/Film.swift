@@ -10,14 +10,12 @@ import CoreData
 
 
 class Film: NSManagedObject {
-    
     @NSManaged var director: String
     @NSManaged var episodeId: NSNumber
     @NSManaged var openingCrawl: String
     @NSManaged var producer: String
     @NSManaged var releaseDate: Date
     @NSManaged var title: String
-    
     static let dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "YYYY-MM-dd"
@@ -34,7 +32,6 @@ class Film: NSManagedObject {
             else {
                 throw NSError(domain: "", code: 100, userInfo: nil)
         }
-        
         self.director = director
         self.episodeId = NSNumber(value: episodeId)
         self.openingCrawl = openingCrawl

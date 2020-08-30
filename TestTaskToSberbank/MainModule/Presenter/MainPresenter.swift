@@ -17,36 +17,29 @@ protocol MainViewPresenterProtocol: AnyObject {
 }
 
 class MainPresenter {
-    
     // MARK: - Свойства
     var dataProvider: DataProviderProtocol?
     var router: RouterProtocol?
     // MARK: - weak Свойство
     weak var view: MainTableViewController?
-    
     init(view: MainTableViewController?, dataProvider: DataProviderProtocol?, router: RouterProtocol) {
         self.view = view
         self.router = router
         self.dataProvider = dataProvider
     }
-    
-    
 }
 
 // MARK: - Реализация протокола
 extension MainPresenter: MainViewPresenterProtocol {
-    
     func tapOnTheFilm(film: StarWars?) {
         router?.showDetail(film: film)
     }
-    
     func getFilms() {
         guard let dataProvider = dataProvider else { return }
         dataProvider.fetchFilms { (error) in
             
         }
     }
-    
 }
 
 

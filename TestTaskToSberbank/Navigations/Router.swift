@@ -20,7 +20,6 @@ protocol RouterProtocol: RouterMain {
 }
 
 class Router {
-    
     // MARK: - Свойства
     var navigationController: UINavigationController?
     var assemblyBuilder: AssemblyBuilderProtocol?
@@ -29,14 +28,10 @@ class Router {
         self.navigationController = navigationController
         self.assemblyBuilder = assemblyBuilder
     }
-    
-    
-    
-    
+  
 }
 
 // MARK: - Реализация протокола
-
 extension Router: RouterProtocol {
     func initialViewController() {
         if let navigationController = navigationController {

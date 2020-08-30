@@ -8,15 +8,11 @@
 
 import Foundation
 
-
-let dataErrorDomain = "dataErrorDomain"
-
 protocol NetworkServiceProtocol {
     func getFilms(completion: @escaping(_ filmsDict: [[String: Any]]?, _ error: Error?) -> ())
 }
 
 class NetworkService {
-    
     // MARK: - Приватные свойства
     private let urlSession = URLSession.shared
     private let baseURL = URL(string: "https://swapi.dev/api/")!
@@ -33,13 +29,11 @@ extension NetworkService: NetworkServiceProtocol {
                 completion(nil, error)
                 return
             }
-            
             guard let data = data else {
                 let error = NSError(domain: dataErrorDomain, code: DataErrorCode.networkUnavailable.rawValue, userInfo: nil)
                 completion(nil, error)
                 return
             }
-            
             do {
                 let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
                 guard let jsonDictionary = jsonObject as? [String: Any], let result = jsonDictionary["results"] as? [[String: Any]] else {

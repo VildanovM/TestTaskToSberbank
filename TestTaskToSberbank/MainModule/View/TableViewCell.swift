@@ -19,17 +19,13 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(titleName)
         self.contentView.addSubview(icon)
     }
-    
     override func updateConstraints() {
-        
         [titleName, icon].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
-        
         icon.widthAnchor.constraint(equalToConstant: 20).isActive = true
         icon.heightAnchor.constraint(equalTo: icon.widthAnchor).isActive = true
         icon.centerYAnchor.constraint(equalTo: titleName.centerYAnchor).isActive = true

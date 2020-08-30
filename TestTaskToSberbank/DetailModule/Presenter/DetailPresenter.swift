@@ -14,40 +14,29 @@ protocol DetailViewProtocol: AnyObject {
 }
 
 protocol DetailViewPresenterProtocol: AnyObject {
-    
     func setFilm()
     func tap()
-    
 }
 
 class DetailPresenter {
-    
-    
-    
     // MARK: - Cвойства
     var film: StarWars?
     var router: RouterProtocol?
     // MARK: - Приватные свойства
     weak var view: DetailViewProtocol?
     
-    
     init(view: DetailViewProtocol, router: RouterProtocol, film: StarWars?) {
         self.view = view
         self.film = film
         self.router = router
     }
-    
-    
 }
-
 
 // MARK: - Реализация протокола
 extension DetailPresenter: DetailViewPresenterProtocol {
-    
     func setFilm() {
         self.view?.setFilm(film: film)
     }
-    
     func tap() {
         router?.popToRoot()
     }
