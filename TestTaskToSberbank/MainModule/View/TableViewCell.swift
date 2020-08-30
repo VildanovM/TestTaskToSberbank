@@ -12,9 +12,8 @@ final class TableViewCell: UITableViewCell {
     
     // MARK: - Свойства
     var titleName = UILabel()
+    let icon = UIImageView(image: UIImage(named: "r2d2.png"))
     static let reusedId = "reusedId"
-    // MARK: - Приватные cвойства
-    private let icon = UIImageView(image: UIImage(named: "r2d2.png"))
     
     override func awakeFromNib() {
         super.awakeFromNib()

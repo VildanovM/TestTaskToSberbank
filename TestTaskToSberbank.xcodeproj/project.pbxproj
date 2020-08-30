@@ -24,9 +24,13 @@
 		9735FFE324F98EBD001752DC /* StackCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE224F98EBD001752DC /* StackCoreData.swift */; };
 		9735FFE724FA6831001752DC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE624FA6831001752DC /* DataProvider.swift */; };
 		9735FFE924FA77B2001752DC /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE824FA77B2001752DC /* MainTableViewController.swift */; };
+		9790E31424FC62A4003A5F5E /* MainViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9790E31324FC62A4003A5F5E /* MainViewTests.swift */; };
 		979B0FDE24FC0B7900EFF4C7 /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18FA24FC09460078E457 /* MockNavigationController.swift */; };
+		979B0FE024FC43D100EFF4C7 /* DataProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B0FDF24FC43D100EFF4C7 /* DataProviderTest.swift */; };
+		979B0FE224FC445900EFF4C7 /* TableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B0FE124FC445900EFF4C7 /* TableViewCellTest.swift */; };
+		979B0FE424FC469600EFF4C7 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B0FE324FC469600EFF4C7 /* DetailViewControllerTests.swift */; };
+		979B0FE824FC54F100EFF4C7 /* FilmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B0FE724FC54F100EFF4C7 /* FilmTests.swift */; };
 		97BA18D624FBDF4F0078E457 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18D524FBDF4F0078E457 /* Tips.swift */; };
-		97BA18DE24FC00990078E457 /* TestTaskToSberbankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18DD24FC00990078E457 /* TestTaskToSberbankTests.swift */; };
 		97BA18E524FC00CE0078E457 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE5024F9744E00653AAA /* AppDelegate.swift */; };
 		97BA18E624FC00D10078E457 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE5224F9744E00653AAA /* SceneDelegate.swift */; };
 		97BA18E724FC00D70078E457 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18D524FBDF4F0078E457 /* Tips.swift */; };
@@ -44,7 +48,7 @@
 		97BA18F324FC01060078E457 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7924F9767E00653AAA /* DetailPresenter.swift */; };
 		97BA18F524FC01630078E457 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18F424FC01630078E457 /* MainPresenterTests.swift */; };
 		97BA18F724FC01F70078E457 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18F624FC01F70078E457 /* NetworkServiceTests.swift */; };
-		97BA18F924FC08C40078E457 /* RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18F824FC08C40078E457 /* RouterTest.swift */; };
+		97BA18F924FC08C40078E457 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18F824FC08C40078E457 /* RouterTests.swift */; };
 		97BA18FB24FC09460078E457 /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18FA24FC09460078E457 /* MockNavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,13 +82,17 @@
 		9735FFE224F98EBD001752DC /* StackCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoreData.swift; sourceTree = "<group>"; };
 		9735FFE624FA6831001752DC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		9735FFE824FA77B2001752DC /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		9790E31324FC62A4003A5F5E /* MainViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTests.swift; sourceTree = "<group>"; };
+		979B0FDF24FC43D100EFF4C7 /* DataProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTest.swift; sourceTree = "<group>"; };
+		979B0FE124FC445900EFF4C7 /* TableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellTest.swift; sourceTree = "<group>"; };
+		979B0FE324FC469600EFF4C7 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		979B0FE724FC54F100EFF4C7 /* FilmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTests.swift; sourceTree = "<group>"; };
 		97BA18D524FBDF4F0078E457 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
 		97BA18DB24FC00990078E457 /* TestTaskToSberbankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTaskToSberbankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97BA18DD24FC00990078E457 /* TestTaskToSberbankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTaskToSberbankTests.swift; sourceTree = "<group>"; };
 		97BA18DF24FC00990078E457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97BA18F424FC01630078E457 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
 		97BA18F624FC01F70078E457 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
-		97BA18F824FC08C40078E457 /* RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTest.swift; sourceTree = "<group>"; };
+		97BA18F824FC08C40078E457 /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		97BA18FA24FC09460078E457 /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,10 +258,14 @@
 		97BA18DC24FC00990078E457 /* TestTaskToSberbankTests */ = {
 			isa = PBXGroup;
 			children = (
-				97BA18DD24FC00990078E457 /* TestTaskToSberbankTests.swift */,
 				97BA18F424FC01630078E457 /* MainPresenterTests.swift */,
+				979B0FDF24FC43D100EFF4C7 /* DataProviderTest.swift */,
 				97BA18F624FC01F70078E457 /* NetworkServiceTests.swift */,
-				97BA18F824FC08C40078E457 /* RouterTest.swift */,
+				97BA18F824FC08C40078E457 /* RouterTests.swift */,
+				979B0FE124FC445900EFF4C7 /* TableViewCellTest.swift */,
+				979B0FE324FC469600EFF4C7 /* DetailViewControllerTests.swift */,
+				979B0FE724FC54F100EFF4C7 /* FilmTests.swift */,
+				9790E31324FC62A4003A5F5E /* MainViewTests.swift */,
 				97BA18DF24FC00990078E457 /* Info.plist */,
 			);
 			path = TestTaskToSberbankTests;
@@ -383,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97BA18F024FC00FE0078E457 /* TableViewCell.swift in Sources */,
+				9790E31424FC62A4003A5F5E /* MainViewTests.swift in Sources */,
 				97BA18EE24FC00F80078E457 /* NetworkService.swift in Sources */,
 				97BA18EC24FC00F10078E457 /* Model.swift in Sources */,
 				97BA18E524FC00CE0078E457 /* AppDelegate.swift in Sources */,
@@ -390,9 +403,9 @@
 				97BA18E724FC00D70078E457 /* Tips.swift in Sources */,
 				97BA18F124FC01010078E457 /* MainPresenter.swift in Sources */,
 				97BA18EF24FC00FB0078E457 /* MainTableViewController.swift in Sources */,
-				97BA18F924FC08C40078E457 /* RouterTest.swift in Sources */,
+				97BA18F924FC08C40078E457 /* RouterTests.swift in Sources */,
 				97BA18EB24FC00EE0078E457 /* DataProvider.swift in Sources */,
-				97BA18DE24FC00990078E457 /* TestTaskToSberbankTests.swift in Sources */,
+				979B0FE224FC445900EFF4C7 /* TableViewCellTest.swift in Sources */,
 				97BA18FB24FC09460078E457 /* MockNavigationController.swift in Sources */,
 				97BA18ED24FC00F30078E457 /* Film.swift in Sources */,
 				97BA18E824FC00E70078E457 /* ModuleBuilder.swift in Sources */,
@@ -400,7 +413,10 @@
 				97BA18E924FC00E90078E457 /* Router.swift in Sources */,
 				97BA18F224FC01030078E457 /* DetailViewController.swift in Sources */,
 				97BA18EA24FC00EC0078E457 /* StackCoreData.swift in Sources */,
+				979B0FE424FC469600EFF4C7 /* DetailViewControllerTests.swift in Sources */,
 				97BA18F724FC01F70078E457 /* NetworkServiceTests.swift in Sources */,
+				979B0FE824FC54F100EFF4C7 /* FilmTests.swift in Sources */,
+				979B0FE024FC43D100EFF4C7 /* DataProviderTest.swift in Sources */,
 				97BA18E624FC00D10078E457 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

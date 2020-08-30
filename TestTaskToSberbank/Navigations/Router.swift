@@ -28,7 +28,7 @@ final class Router {
         self.navigationController = navigationController
         self.assemblyBuilder = assemblyBuilder
     }
-  
+    
 }
 
 // MARK: - Реализация протокола

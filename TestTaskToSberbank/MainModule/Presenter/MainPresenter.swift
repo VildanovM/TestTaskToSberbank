@@ -34,8 +34,7 @@ extension MainPresenter: MainPresenterProtocol {
         router?.showDetail(film: film)
     }
     func getFilms() {
-        guard let dataProvider = dataProvider else { return }
-        dataProvider.fetchFilms { (error) in
+        dataProvider?.fetchFilms { (error) in
             
         }
     }

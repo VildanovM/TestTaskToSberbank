@@ -7,27 +7,44 @@
 //
 
 import XCTest
+import CoreData
 
 class MainPresenterTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    
+    func testThatMainPresenterSetupCorrectly() {
+        // Arrange
+        let stackCoreData = StackCoreData()
+        let networkService = NetworkService()
+        let dataProvider = DataProvider(persistentContainer: stackCoreData.persistentContainer, repository: networkService)
+        let mockNavigationController = MockNavigationController()
+        let assemblyBuilder = AssemblyModelBuilder()
+        let router = Router(navigationController: mockNavigationController, assemblyBuilder: assemblyBuilder)
+        let mainPresenter = MainPresenter(dataProvider: dataProvider, router: router)
+        // Act
+        mainPresenter.tapOnTheFilm(film: StarWars(producer: "Foo", title: "Bar", director: "Foo", openingCrawl: "Foo", episodeId: 1, releaseDate: "Bar"))
+        
+        // Assert
+        XCTAssertNil(router.navigationController?.viewControllers.first as? MainTableViewController)
+        
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testThatMainPresenterMakeGetFilmsWithoutDataProvider() {
+        // Arrange
+        let mockNavigationController = MockNavigationController()
+        let assemblyBuilder = AssemblyModelBuilder()
+        let router = Router(navigationController: mockNavigationController, assemblyBuilder: assemblyBuilder)
+        let mainPresenter = MainPresenter(dataProvider: nil, router: router)
+        let view = MainTableViewController()
+        view.presenter = mainPresenter
+        mainPresenter.view = view
+        // Act
+        mainPresenter.getFilms()
+        let index = IndexPath(row: 0, section: 0)
+        
+        // Assert
+        XCTAssertNil(view.tableView.cellForRow(at: index))
+        
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
 }

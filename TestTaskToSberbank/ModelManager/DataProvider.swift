@@ -27,8 +27,8 @@ final class DataProvider {
         self.persistentContainer = persistentContainer
         self.repository = repository
     }
-
-    private func syncFilms(jsonDictionary: [[String: Any]], taskContext: NSManagedObjectContext) -> Bool {
+    
+    func syncFilms(jsonDictionary: [[String: Any]], taskContext: NSManagedObjectContext) -> Bool {
         var successfull = false
         taskContext.performAndWait {
             let matchingEpisodeRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Film")

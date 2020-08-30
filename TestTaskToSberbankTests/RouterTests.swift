@@ -23,6 +23,7 @@ class RouterTest: XCTestCase {
         XCTAssertTrue(!navigationController.viewControllers.isEmpty)
         
     }
+    
     func testThatRouterPushToDetailViewController() {
         // Arrange
         let assemblyBuilder = AssemblyModelBuilder()
@@ -35,6 +36,7 @@ class RouterTest: XCTestCase {
         XCTAssertTrue(detailViewController is DetailViewController)
         
     }
+    
     
     func testThatRouterPopToRootNotDeleteViewControllers() {
         // Arrange

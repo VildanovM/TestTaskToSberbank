@@ -11,53 +11,51 @@ import UIKit
 final class DetailViewController: UIViewController {
     // MARK: - Cвойства
     var presenter: DetailViewPresenterProtocol?
-    // MARK: - Приватные свойства
-    private let stackView = UIStackView()
-    
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
-    
-    private let producerLabel: UILabel = {
+    let producerLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.alpha = 0
         return label
     }()
-    
-    private let directorLabel: UILabel = {
+    let directorLabel: UILabel = {
         let label = UILabel()
         label.alpha = 0
         return label
     }()
-    
-    private let releaseDateLabel: UILabel = {
+    let releaseDateLabel: UILabel = {
         let label = UILabel()
         label.alpha = 0
         return label
     }()
-    
-    private var filmImage: UIImageView = {
+    var filmImage: UIImageView = {
         let image = UIImageView()
+        image.alpha = 0
+        image.contentMode = .scaleAspectFit
         image.layer.shadowRadius = 5
         image.layer.shadowOpacity = 0.7
         return image
     }()
+    
+    let stackView = UIStackView()
+    
     // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = false
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Назад", style: .done, target: self, action: #selector(popToBackAction))
         setupView()
         presenter?.configured()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = false
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Назад", style: .done, target: self, action: #selector(popToBackAction))
-        let arrayOfLabels = [producerLabel, directorLabel, releaseDateLabel]
+        let arrayOfLabels = [producerLabel, directorLabel, releaseDateLabel, filmImage]
         UIView.animate(withDuration: 1, animations: {
             arrayOfLabels.forEach {
                 $0.alpha = 1

@@ -11,7 +11,7 @@ import CoreData
 
 final class MainTableViewController: UITableViewController {
     // MARK: - Свойства
-    public var presenter: MainPresenterProtocol?
+    var presenter: MainPresenterProtocol?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Film> = {
         let fetchRequest = NSFetchRequest<Film>(entityName:"Film")
@@ -22,8 +22,8 @@ final class MainTableViewController: UITableViewController {
         do {
             try controller.performFetch()
         } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            let nsError = error as NSError
+            fatalError("Ошибка \(nsError), \(nsError.userInfo)")
         }
         return controller
     }()

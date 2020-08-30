@@ -22,7 +22,7 @@ final class NetworkService {
 extension NetworkService: NetworkServiceProtocol {
     var baseURL: URL? {
         
-            return URL(string: "https://swapi.dev/api/")
+        return URL(string: "https://swapi.dev/api/")
         
     }
     
