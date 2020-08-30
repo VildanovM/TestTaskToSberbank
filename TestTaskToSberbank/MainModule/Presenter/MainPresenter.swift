@@ -22,8 +22,7 @@ final class MainPresenter {
     var router: RouterProtocol?
     // MARK: - weak Свойство
     weak var view: MainTableViewController?
-    init(view: MainTableViewController?, dataProvider: DataProviderProtocol?, router: RouterProtocol) {
-        self.view = view
+    init(dataProvider: DataProviderProtocol?, router: RouterProtocol) {
         self.router = router
         self.dataProvider = dataProvider
     }

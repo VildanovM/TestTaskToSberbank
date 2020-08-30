@@ -20,7 +20,8 @@ final class AssemblyModelBuilder: AssemblyBuilderProtocol {
         let stackCoreData = StackCoreData()
         let networkService = NetworkService()
         let dataProvider = DataProvider(persistentContainer: stackCoreData.persistentContainer, repository: networkService as NetworkServiceProtocol)
-        let presenter = MainPresenter(view: view, dataProvider: dataProvider as DataProviderProtocol, router: router)
+        let presenter = MainPresenter(dataProvider: dataProvider as DataProviderProtocol, router: router)
+        presenter.view = view
         view.presenter = presenter
         return view
     }
