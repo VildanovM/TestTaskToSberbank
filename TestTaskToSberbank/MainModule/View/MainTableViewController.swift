@@ -16,8 +16,7 @@ final class MainTableViewController: UITableViewController {
     lazy var fetchedResultsController: NSFetchedResultsController<Film> = {
         let fetchRequest = NSFetchRequest<Film>(entityName:"Film")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "episodeId", ascending:true)]
-        guard let presenter = presenter else { return NSFetchedResultsController() }
-        guard let dataProvider = presenter.dataProvider else { return NSFetchedResultsController() }
+        guard let dataProvider = presenter?.dataProvider else { return NSFetchedResultsController() }
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataProvider.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         controller.delegate = self
         do {
@@ -35,8 +34,7 @@ final class MainTableViewController: UITableViewController {
         tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.reusedId)
         tableView.dataSource = self
         tableView.delegate = self
-        guard let presenter = presenter else { return }
-        presenter.getFilms()
+        presenter?.getFilms()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,8 +72,7 @@ extension MainTableViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         let film = StarWars(producer: object.producer, title: object.title, director: object.director, openingCrawl: object.openingCrawl, episodeId: object.episodeId, releaseDate: dateFormatter.string(from: object.releaseDate))
-        guard let presenter = presenter else { return }
-        presenter.tapOnTheFilm(film: film)
+        presenter?.tapOnTheFilm(film: film)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

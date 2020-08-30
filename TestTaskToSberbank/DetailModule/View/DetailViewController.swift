@@ -93,8 +93,7 @@ final class DetailViewController: UIViewController {
     
     
     @objc func popToBackAction() {
-        guard let presenter = presenter else { return }
-        presenter.returnToList()
+        presenter?.returnToList()
     }
 }
 
