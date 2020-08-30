@@ -24,8 +24,39 @@
 		9735FFE324F98EBD001752DC /* StackCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE224F98EBD001752DC /* StackCoreData.swift */; };
 		9735FFE724FA6831001752DC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE624FA6831001752DC /* DataProvider.swift */; };
 		9735FFE924FA77B2001752DC /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE824FA77B2001752DC /* MainTableViewController.swift */; };
+		979B0FDE24FC0B7900EFF4C7 /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18FA24FC09460078E457 /* MockNavigationController.swift */; };
 		97BA18D624FBDF4F0078E457 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18D524FBDF4F0078E457 /* Tips.swift */; };
+		97BA18DE24FC00990078E457 /* TestTaskToSberbankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18DD24FC00990078E457 /* TestTaskToSberbankTests.swift */; };
+		97BA18E524FC00CE0078E457 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE5024F9744E00653AAA /* AppDelegate.swift */; };
+		97BA18E624FC00D10078E457 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE5224F9744E00653AAA /* SceneDelegate.swift */; };
+		97BA18E724FC00D70078E457 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18D524FBDF4F0078E457 /* Tips.swift */; };
+		97BA18E824FC00E70078E457 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE6B24F9755100653AAA /* ModuleBuilder.swift */; };
+		97BA18E924FC00E90078E457 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE6824F9752100653AAA /* Router.swift */; };
+		97BA18EA24FC00EC0078E457 /* StackCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE224F98EBD001752DC /* StackCoreData.swift */; };
+		97BA18EB24FC00EE0078E457 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE624FA6831001752DC /* DataProvider.swift */; };
+		97BA18EC24FC00F10078E457 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE6524F974F500653AAA /* Model.swift */; };
+		97BA18ED24FC00F30078E457 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFDF24F98BCC001752DC /* Film.swift */; };
+		97BA18EE24FC00F80078E457 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7524F9764700653AAA /* NetworkService.swift */; };
+		97BA18EF24FC00FB0078E457 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE824FA77B2001752DC /* MainTableViewController.swift */; };
+		97BA18F024FC00FE0078E457 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE6F24F975AC00653AAA /* TableViewCell.swift */; };
+		97BA18F124FC01010078E457 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7224F975DE00653AAA /* MainPresenter.swift */; };
+		97BA18F224FC01030078E457 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7C24F976C600653AAA /* DetailViewController.swift */; };
+		97BA18F324FC01060078E457 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9706EE7924F9767E00653AAA /* DetailPresenter.swift */; };
+		97BA18F524FC01630078E457 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18F424FC01630078E457 /* MainPresenterTests.swift */; };
+		97BA18F724FC01F70078E457 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18F624FC01F70078E457 /* NetworkServiceTests.swift */; };
+		97BA18F924FC08C40078E457 /* RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18F824FC08C40078E457 /* RouterTest.swift */; };
+		97BA18FB24FC09460078E457 /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18FA24FC09460078E457 /* MockNavigationController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		97BA18E024FC00990078E457 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9706EE4524F9744E00653AAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9706EE4C24F9744E00653AAA;
+			remoteInfo = TestTaskToSberbank;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9706EE4D24F9744E00653AAA /* TestTaskToSberbank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskToSberbank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,10 +79,24 @@
 		9735FFE624FA6831001752DC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		9735FFE824FA77B2001752DC /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		97BA18D524FBDF4F0078E457 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
+		97BA18DB24FC00990078E457 /* TestTaskToSberbankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTaskToSberbankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		97BA18DD24FC00990078E457 /* TestTaskToSberbankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTaskToSberbankTests.swift; sourceTree = "<group>"; };
+		97BA18DF24FC00990078E457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97BA18F424FC01630078E457 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
+		97BA18F624FC01F70078E457 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		97BA18F824FC08C40078E457 /* RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTest.swift; sourceTree = "<group>"; };
+		97BA18FA24FC09460078E457 /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9706EE4A24F9744E00653AAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97BA18D824FC00990078E457 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -65,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				9706EE4F24F9744E00653AAA /* TestTaskToSberbank */,
+				97BA18DC24FC00990078E457 /* TestTaskToSberbankTests */,
 				9706EE4E24F9744E00653AAA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				9706EE4D24F9744E00653AAA /* TestTaskToSberbank.app */,
+				97BA18DB24FC00990078E457 /* TestTaskToSberbankTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +138,7 @@
 				9706EE7124F975BD00653AAA /* MainModule */,
 				9706EE7724F9765800653AAA /* DetailModule */,
 				9706EE5B24F9745200653AAA /* LaunchScreen.storyboard */,
+				979B0FDD24FC0B1700EFF4C7 /* Mocks */,
 				9706EE5924F9745200653AAA /* Assets.xcassets */,
 				9706EE5E24F9745200653AAA /* Info.plist */,
 			);
@@ -191,6 +239,26 @@
 			path = ModelManager;
 			sourceTree = "<group>";
 		};
+		979B0FDD24FC0B1700EFF4C7 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				97BA18FA24FC09460078E457 /* MockNavigationController.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		97BA18DC24FC00990078E457 /* TestTaskToSberbankTests */ = {
+			isa = PBXGroup;
+			children = (
+				97BA18DD24FC00990078E457 /* TestTaskToSberbankTests.swift */,
+				97BA18F424FC01630078E457 /* MainPresenterTests.swift */,
+				97BA18F624FC01F70078E457 /* NetworkServiceTests.swift */,
+				97BA18F824FC08C40078E457 /* RouterTest.swift */,
+				97BA18DF24FC00990078E457 /* Info.plist */,
+			);
+			path = TestTaskToSberbankTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,6 +279,24 @@
 			productReference = 9706EE4D24F9744E00653AAA /* TestTaskToSberbank.app */;
 			productType = "com.apple.product-type.application";
 		};
+		97BA18DA24FC00990078E457 /* TestTaskToSberbankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97BA18E424FC00990078E457 /* Build configuration list for PBXNativeTarget "TestTaskToSberbankTests" */;
+			buildPhases = (
+				97BA18D724FC00990078E457 /* Sources */,
+				97BA18D824FC00990078E457 /* Frameworks */,
+				97BA18D924FC00990078E457 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97BA18E124FC00990078E457 /* PBXTargetDependency */,
+			);
+			name = TestTaskToSberbankTests;
+			productName = TestTaskToSberbankTests;
+			productReference = 97BA18DB24FC00990078E457 /* TestTaskToSberbankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -222,6 +308,9 @@
 				ORGANIZATIONNAME = "Максим Вильданов";
 				TargetAttributes = {
 					9706EE4C24F9744E00653AAA = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					97BA18DA24FC00990078E457 = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
@@ -240,6 +329,7 @@
 			projectRoot = "";
 			targets = (
 				9706EE4C24F9744E00653AAA /* TestTaskToSberbank */,
+				97BA18DA24FC00990078E457 /* TestTaskToSberbankTests */,
 			);
 		};
 /* End PBXProject section */
@@ -251,6 +341,13 @@
 			files = (
 				9706EE5D24F9745200653AAA /* LaunchScreen.storyboard in Resources */,
 				9706EE5A24F9745200653AAA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97BA18D924FC00990078E457 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +369,7 @@
 				9706EE7324F975DE00653AAA /* MainPresenter.swift in Sources */,
 				9706EE7624F9764700653AAA /* NetworkService.swift in Sources */,
 				9735FFE024F98BCC001752DC /* Film.swift in Sources */,
+				979B0FDE24FC0B7900EFF4C7 /* MockNavigationController.swift in Sources */,
 				9706EE5324F9744E00653AAA /* SceneDelegate.swift in Sources */,
 				9706EE6624F974F500653AAA /* Model.swift in Sources */,
 				9735FFE724FA6831001752DC /* DataProvider.swift in Sources */,
@@ -280,7 +378,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		97BA18D724FC00990078E457 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97BA18F024FC00FE0078E457 /* TableViewCell.swift in Sources */,
+				97BA18EE24FC00F80078E457 /* NetworkService.swift in Sources */,
+				97BA18EC24FC00F10078E457 /* Model.swift in Sources */,
+				97BA18E524FC00CE0078E457 /* AppDelegate.swift in Sources */,
+				97BA18F524FC01630078E457 /* MainPresenterTests.swift in Sources */,
+				97BA18E724FC00D70078E457 /* Tips.swift in Sources */,
+				97BA18F124FC01010078E457 /* MainPresenter.swift in Sources */,
+				97BA18EF24FC00FB0078E457 /* MainTableViewController.swift in Sources */,
+				97BA18F924FC08C40078E457 /* RouterTest.swift in Sources */,
+				97BA18EB24FC00EE0078E457 /* DataProvider.swift in Sources */,
+				97BA18DE24FC00990078E457 /* TestTaskToSberbankTests.swift in Sources */,
+				97BA18FB24FC09460078E457 /* MockNavigationController.swift in Sources */,
+				97BA18ED24FC00F30078E457 /* Film.swift in Sources */,
+				97BA18E824FC00E70078E457 /* ModuleBuilder.swift in Sources */,
+				97BA18F324FC01060078E457 /* DetailPresenter.swift in Sources */,
+				97BA18E924FC00E90078E457 /* Router.swift in Sources */,
+				97BA18F224FC01030078E457 /* DetailViewController.swift in Sources */,
+				97BA18EA24FC00EC0078E457 /* StackCoreData.swift in Sources */,
+				97BA18F724FC01F70078E457 /* NetworkServiceTests.swift in Sources */,
+				97BA18E624FC00D10078E457 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		97BA18E124FC00990078E457 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9706EE4C24F9744E00653AAA /* TestTaskToSberbank */;
+			targetProxy = 97BA18E024FC00990078E457 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9706EE5B24F9745200653AAA /* LaunchScreen.storyboard */ = {
@@ -444,6 +577,42 @@
 			};
 			name = Release;
 		};
+		97BA18E224FC00990078E457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G55RYJ3TB2;
+				INFOPLIST_FILE = TestTaskToSberbankTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vldn.TestTaskToSberbankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97BA18E324FC00990078E457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G55RYJ3TB2;
+				INFOPLIST_FILE = TestTaskToSberbankTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vldn.TestTaskToSberbankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -461,6 +630,15 @@
 			buildConfigurations = (
 				9706EE6224F9745200653AAA /* Debug */,
 				9706EE6324F9745200653AAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97BA18E424FC00990078E457 /* Build configuration list for PBXNativeTarget "TestTaskToSberbankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97BA18E224FC00990078E457 /* Debug */,
+				97BA18E324FC00990078E457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

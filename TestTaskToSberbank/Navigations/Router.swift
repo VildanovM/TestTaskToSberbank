@@ -19,7 +19,7 @@ protocol RouterProtocol: RouterMain {
     func popToRoot()
 }
 
-class Router {
+final class Router {
     // MARK: - Свойства
     var navigationController: UINavigationController?
     var assemblyBuilder: AssemblyBuilderProtocol?

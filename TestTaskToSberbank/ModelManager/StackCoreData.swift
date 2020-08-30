@@ -12,7 +12,7 @@ protocol StackCoreDataProtocol {
     var persistentContainer: NSPersistentContainer { get }
 }
 
-class StackCoreData: StackCoreDataProtocol {
+final class StackCoreData: StackCoreDataProtocol {
     // MARK: - Свойства
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Film")

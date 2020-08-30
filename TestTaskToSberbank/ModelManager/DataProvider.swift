@@ -13,7 +13,7 @@ protocol DataProviderProtocol {
     func fetchFilms(completion: @escaping(Error?) -> Void)
 }
 
-class DataProvider {
+final class DataProvider {
     
     // MARK: - Свойства
     var viewContext: NSManagedObjectContext {

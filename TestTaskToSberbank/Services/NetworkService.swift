@@ -10,19 +10,26 @@ import Foundation
 
 protocol NetworkServiceProtocol {
     func getFilms(completion: @escaping(_ filmsDict: [[String: Any]]?, _ error: Error?) -> ())
+    var baseURL: URL? { get }
 }
 
-class NetworkService {
+final class NetworkService {
     // MARK: - Приватные свойства
     private let urlSession = URLSession.shared
-    private let baseURL = URL(string: "https://swapi.dev/api/")!
-    
-    
 }
 
 // MARK: - Реализация протокола
 extension NetworkService: NetworkServiceProtocol {
+    var baseURL: URL? {
+        
+            return URL(string: "https://swapi.dev/api/")
+        
+    }
+    
     func getFilms(completion: @escaping(_ filmsDict: [[String: Any]]?, _ error: Error?) -> ()) {
+        
+        guard let baseURL = baseURL else { return }
+        
         let filmURL = baseURL.appendingPathComponent("films")
         urlSession.dataTask(with: filmURL) { (data, response, error) in
             if let error = error {

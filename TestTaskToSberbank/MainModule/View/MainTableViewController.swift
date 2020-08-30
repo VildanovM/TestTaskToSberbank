@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-class MainTableViewController: UITableViewController {
+final class MainTableViewController: UITableViewController {
     // MARK: - Свойства
-    public var presenter: MainViewPresenterProtocol?
+    public var presenter: MainPresenterProtocol?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Film> = {
         let fetchRequest = NSFetchRequest<Film>(entityName:"Film")
@@ -57,15 +57,18 @@ extension MainTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.reusedId, for: indexPath) as! TableViewCell
         let film = fetchedResultsController.object(at: indexPath)
         cell.titleName.text = film.title
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let object = fetchedResultsController.object(at: indexPath)
         let dateFormatter = DateFormatter()
@@ -74,6 +77,7 @@ extension MainTableViewController {
         guard let presenter = presenter else { return }
         presenter.tapOnTheFilm(film: film)
     }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

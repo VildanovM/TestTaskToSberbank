@@ -14,7 +14,7 @@ protocol AssemblyBuilderProtocol {
     func createDetailModule(router: RouterProtocol, film: StarWars?) -> UIViewController
 }
 
-class AssemblyModelBuilder: AssemblyBuilderProtocol {
+final class AssemblyModelBuilder: AssemblyBuilderProtocol {
     func createMainModule(router: RouterProtocol) -> UITableViewController {
         let view = MainTableViewController()
         let stackCoreData = StackCoreData()

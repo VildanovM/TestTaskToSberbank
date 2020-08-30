@@ -9,7 +9,7 @@
 import CoreData
 
 
-class Film: NSManagedObject {
+final class Film: NSManagedObject {
     @NSManaged var director: String
     @NSManaged var episodeId: NSNumber
     @NSManaged var openingCrawl: String

@@ -9,14 +9,14 @@
 import Foundation
 import CoreData
 
-protocol MainViewPresenterProtocol: AnyObject {
+protocol MainPresenterProtocol: AnyObject {
     var dataProvider: DataProviderProtocol? { get set }
     func getFilms()
     func tapOnTheFilm(film: StarWars?)
     
 }
 
-class MainPresenter {
+final class MainPresenter {
     // MARK: - Свойства
     var dataProvider: DataProviderProtocol?
     var router: RouterProtocol?
@@ -30,7 +30,7 @@ class MainPresenter {
 }
 
 // MARK: - Реализация протокола
-extension MainPresenter: MainViewPresenterProtocol {
+extension MainPresenter: MainPresenterProtocol {
     func tapOnTheFilm(film: StarWars?) {
         router?.showDetail(film: film)
     }

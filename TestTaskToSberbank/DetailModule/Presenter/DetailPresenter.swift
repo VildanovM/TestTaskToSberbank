@@ -18,7 +18,7 @@ protocol DetailViewPresenterProtocol: AnyObject {
     func tap()
 }
 
-class DetailPresenter {
+final class DetailPresenter {
     // MARK: - Cвойства
     var film: StarWars?
     var router: RouterProtocol?
