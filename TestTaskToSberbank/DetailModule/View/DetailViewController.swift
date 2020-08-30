@@ -46,15 +46,6 @@ final class DetailViewController: UIViewController {
         image.layer.shadowOpacity = 0.7
         return image
     }()
-    private let popButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Return to List", for: .normal)
-        button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-        button.backgroundColor = .black
-        button.layer.cornerRadius = 10
-        button.layer.masksToBounds = true
-        return button
-    }()
     // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +55,8 @@ final class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Назад", style: .done, target: self, action: #selector(popToBackAction))
         let arrayOfLabels = [producerLabel, directorLabel, releaseDateLabel]
         UIView.animate(withDuration: 1, animations: {
             arrayOfLabels.forEach {
@@ -84,7 +77,7 @@ final class DetailViewController: UIViewController {
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.preservesSuperviewLayoutMargins = true
         view.addSubview(stackView)
-        [filmImage, titleLabel, producerLabel, directorLabel, releaseDateLabel, popButton].forEach { stackView.addArrangedSubview($0)
+        [filmImage, titleLabel, producerLabel, directorLabel, releaseDateLabel].forEach { stackView.addArrangedSubview($0)
         }
     }
     
@@ -99,7 +92,7 @@ final class DetailViewController: UIViewController {
     }
     
     
-    @objc func tapButton() {
+    @objc func popToBackAction() {
         guard let presenter = presenter else { return }
         presenter.returnToList()
     }
@@ -111,9 +104,9 @@ extension DetailViewController: DetailViewProtocol {
         guard let film = film else { return }
         titleLabel.text = film.title
         filmImage.image = UIImage(named: film.title + ".jpg")
-        producerLabel.text = "Producer: " + film.producer
-        directorLabel.text = "Director: " + film.director
-        releaseDateLabel.text = "Release date: " + film.releaseDate
+        producerLabel.text = "Продюсер: " + film.producer
+        directorLabel.text = "Режисер: " + film.director
+        releaseDateLabel.text = "Дата выхода: " + film.releaseDate
     }
 }
 

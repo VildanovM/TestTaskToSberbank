@@ -18,7 +18,7 @@ final class StackCoreData: StackCoreDataProtocol {
         let container = NSPersistentContainer(name: "Film")
         container.loadPersistentStores(completionHandler: { (_, error) in
             guard let error = error as NSError? else { return }
-            fatalError("Unresolved error: \(error), \(error.userInfo)")
+            fatalError("Ошибка! Информация: \(error), \(error.userInfo)")
         })
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         container.viewContext.undoManager = nil

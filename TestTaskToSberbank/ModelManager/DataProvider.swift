@@ -43,19 +43,19 @@ final class DataProvider {
                     NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIDs], into: [self.persistentContainer.viewContext])
                 }
             } catch {
-                print("Error: \(error)\nCould not batch delete existing records.")
+                print("Ошибка: \(error)\nНе удалось пакетно удалить существующие записи.")
                 return
             }
             // Создает новую запись
             for filmDictionary in jsonDictionary {
                 guard let film = NSEntityDescription.insertNewObject(forEntityName: "Film", into: taskContext) as? Film else {
-                    print("Error: Failed to create a new Film object!")
+                    print("Ошибка: не удалось создать новый объект «Фильм»!")
                     return
                 }
                 do {
                     try film.update(with: filmDictionary)
                 } catch {
-                    print("Error: \(error)\nThe quake object will be deleted.")
+                    print("Ошибка: \(error)\nОшибочный объект будет удален")
                     taskContext.delete(film)
                 }
             }
@@ -64,7 +64,7 @@ final class DataProvider {
                 do {
                     try taskContext.save()
                 } catch {
-                    print("Error: \(error)\nCould not save Core Data context.")
+                    print("Ошибка: \(error)\nНельзя сохранить CoreData Context")
                 }
                 taskContext.reset() // Сбрасывает контекст
             }
