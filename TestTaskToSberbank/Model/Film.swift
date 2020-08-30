@@ -20,7 +20,7 @@ class Film: NSManagedObject {
     
     static let dateFormatter: DateFormatter = {
         let df = DateFormatter()
-        df.dateFormat = "dd MM YYYY"
+        df.dateFormat = "YYYY-MM-dd"
         return df
     }()
     

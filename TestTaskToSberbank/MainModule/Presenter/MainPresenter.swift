@@ -20,7 +20,7 @@ protocol MainViewPresenterProtocol: AnyObject {
     var dataProvider: DataProvider? { get set }
     func getFilms()
     var films: [StarWars]? { get set }
-//    func tapOnTheFilm(film: StarWarsFilm?)
+    func tapOnTheFilm(film: StarWars?)
     
 }
 
@@ -33,7 +33,6 @@ class MainPresenter: MainViewPresenterProtocol {
     var films: [StarWars]?
     var router: RouterProtocol?
     weak var view: MainViewProtocol?
-//    var dataProvider: DataProvider?
     
     required init(view: MainViewProtocol, dataProvider: DataProvider, router: RouterProtocol) {
         self.view = view
@@ -41,9 +40,9 @@ class MainPresenter: MainViewPresenterProtocol {
         self.dataProvider = dataProvider
     }
     
-//    func tapOnTheFilm(film: StarWarsFilm?) {
-//        router?.showDetail(film: film)
-//    }
+    func tapOnTheFilm(film: StarWars?) {
+        router?.showDetail(film: film)
+    }
     
     func getFilms() {
         guard let dataProvider = dataProvider else { return }

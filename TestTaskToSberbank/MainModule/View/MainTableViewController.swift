@@ -58,13 +58,24 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.reusedId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.reusedId, for: indexPath) as! TableViewCell
         let film = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = film.title
-        cell.detailTextLabel?.text = film.director
+        cell.titleName.text = film.title
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let object = fetchedResultsController.object(at: indexPath)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        let film = StarWars(producer: object.producer, title: object.title, director: object.director, openingCrawl: object.openingCrawl, episodeId: object.episodeId, releaseDate: dateFormatter.string(from: object.releaseDate))
+        presenter.tapOnTheFilm(film: film)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 
 }
 

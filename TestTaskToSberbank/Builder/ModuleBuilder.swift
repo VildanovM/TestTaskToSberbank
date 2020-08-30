@@ -12,7 +12,7 @@ import CoreData
 protocol AssemblyBuilderProtocol {
     
     func createMainModule(router: RouterProtocol) -> UITableViewController
-//    func createDetailModule(comment: Comment?, router: RouterProtocol) -> UIViewController
+    func createDetailModule(router: RouterProtocol, film: StarWars?) -> UIViewController
     
     
 }
@@ -32,13 +32,12 @@ class AssemblyModelBuilder: AssemblyBuilderProtocol {
         
     }
     
-//    func createDetailModule(comment: Comment?, router: RouterProtocol) -> UIViewController {
-//        let view = DetailViewController()
-//        let networkService = NetworkService()
-//        let presenter = DetailPresenter(view: view, networkService: networkService, router: router, comment: comment)
-//        view.presenter = presenter
-//
-//        return view
-//    }
+    func createDetailModule(router: RouterProtocol, film: StarWars?) -> UIViewController {
+        let view = DetailViewController()
+        let presenter = DetailPresenter(view: view as DetailViewProtocol, router: router, film: film)
+        view.presenter = presenter
+
+        return view
+    }
 
 }

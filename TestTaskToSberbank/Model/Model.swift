@@ -15,6 +15,6 @@ struct StarWars {
     var director: String
     var openingCrawl: String
     var episodeId: NSNumber
-    var releaseDate: Date
+    var releaseDate: String
 }
 

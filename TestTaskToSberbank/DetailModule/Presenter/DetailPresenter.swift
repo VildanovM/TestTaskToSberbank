@@ -9,40 +9,40 @@
 import Foundation
 import CoreData
 
-//protocol DetailViewProtocol: AnyObject {
-//    func setComment(comment: Comment?)
-//}
-//
-//protocol DetailViewPresenterProtocol: AnyObject {
-//    
-//    init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol, comment: Comment?)
-//    func setComment()
-//    func tap()
-//    
-//}
-//
-//class DetailPresenter: DetailViewPresenterProtocol {
-//    
-//    var comment: Comment?
-//    var router: RouterProtocol?
-//    weak var view: DetailViewProtocol?
-//    var dataProvider: DataProvider?
-//    
-//    
-//    required init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol, comment: Comment?) {
-//        self.view = view
-//        self.networkService = networkService
-//        self.comment = comment
-//        self.router = router
-//    }
-//    
-//    func tap() {
-//        router?.popToRoot()
-//    }
-//    
-//    func setFilms() {
-//        self.view?.setComment(comment: comment)
-//    }
-//    
-//    
-//}
+protocol DetailViewProtocol: AnyObject {
+    func setFilm(film: StarWars?)
+}
+
+protocol DetailViewPresenterProtocol: AnyObject {
+    
+    func setFilm()
+    func tap()
+    
+}
+
+class DetailPresenter: DetailViewPresenterProtocol {
+    
+    func setFilm() {
+        self.view?.setFilm(film: film)
+    }
+    
+    
+    
+    var film: StarWars?
+    var router: RouterProtocol?
+    weak var view: DetailViewProtocol?
+    var dataProvider: DataProvider?
+    
+    
+    init(view: DetailViewProtocol, router: RouterProtocol, film: StarWars?) {
+        self.view = view
+        self.film = film
+        self.router = router
+    }
+    
+    func tap() {
+        router?.popToRoot()
+    }
+    
+    
+}
