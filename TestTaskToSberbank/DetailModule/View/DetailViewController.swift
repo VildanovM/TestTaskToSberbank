@@ -13,28 +13,58 @@ final class DetailViewController: UIViewController {
     var presenter: DetailViewPresenterProtocol?
     // MARK: - Приватные свойства
     private let stackView = UIStackView()
-    private let titleLabel = UILabel()
-    private let producerLabel = UILabel()
-    private let directorLabel = UILabel()
-    private let releaseDateLabel = UILabel()
-    private var filmImage = UIImageView()
-    private let popButton = UIButton()
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 20)
+        return label
+    }()
+    
+    private let producerLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.alpha = 0
+        return label
+    }()
+    
+    private let directorLabel: UILabel = {
+        let label = UILabel()
+        label.alpha = 0
+        return label
+    }()
+    
+    private let releaseDateLabel: UILabel = {
+        let label = UILabel()
+        label.alpha = 0
+        return label
+    }()
+    
+    private var filmImage: UIImageView = {
+        let image = UIImageView()
+        image.layer.shadowRadius = 5
+        image.layer.shadowOpacity = 0.7
+        return image
+    }()
+    private let popButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Return to List", for: .normal)
+        button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        return button
+    }()
     // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let presenter = presenter else { return }
-        presenter.setFilm()
-        designDetailView()
-        stackViewCustomization()
-        setConstraint()
+        setupView()
+        presenter?.configured()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let arrayOfLabels = [producerLabel, directorLabel, releaseDateLabel]
-        arrayOfLabels.forEach {
-            $0.alpha = 0
-        }
         UIView.animate(withDuration: 1, animations: {
             arrayOfLabels.forEach {
                 $0.alpha = 1
@@ -42,24 +72,10 @@ final class DetailViewController: UIViewController {
         })
     }
     
-    private func designDetailView() {
+    private func setupView() {
         view.backgroundColor = .white
-        popButton.setTitle("Return to List", for: .normal)
-        popButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-        popButton.backgroundColor = .black
-        popButton.layer.cornerRadius = 10
-        popButton.layer.masksToBounds = true
-        setShadowToImage()
-        titleLabel.textAlignment = .center
-        titleLabel.font = UIFont.systemFont(ofSize: 20)
-        producerLabel.numberOfLines = 0
-        
-        
-    }
-    
-    private func setShadowToImage() {
-        filmImage.layer.shadowRadius = 5
-        filmImage.layer.shadowOpacity = 0.7
+        stackViewCustomization()
+        setConstraint()
     }
     
     private func stackViewCustomization() {
@@ -85,7 +101,7 @@ final class DetailViewController: UIViewController {
     
     @objc func tapButton() {
         guard let presenter = presenter else { return }
-        presenter.tap()
+        presenter.returnToList()
     }
 }
 

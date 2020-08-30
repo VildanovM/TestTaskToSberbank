@@ -27,7 +27,8 @@ final class AssemblyModelBuilder: AssemblyBuilderProtocol {
     
     func createDetailModule(router: RouterProtocol, film: StarWars?) -> UIViewController {
         let view = DetailViewController()
-        let presenter = DetailPresenter(view: view as DetailViewProtocol, router: router, film: film)
+        let presenter = DetailPresenter(router: router, film: film)
+        presenter.view = view
         view.presenter = presenter
         return view
     }

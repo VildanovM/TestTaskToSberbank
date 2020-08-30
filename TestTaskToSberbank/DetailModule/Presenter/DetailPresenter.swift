@@ -14,8 +14,8 @@ protocol DetailViewProtocol: AnyObject {
 }
 
 protocol DetailViewPresenterProtocol: AnyObject {
-    func setFilm()
-    func tap()
+    func configured()
+    func returnToList()
 }
 
 final class DetailPresenter {
@@ -25,8 +25,7 @@ final class DetailPresenter {
     // MARK: - Приватные свойства
     weak var view: DetailViewProtocol?
     
-    init(view: DetailViewProtocol, router: RouterProtocol, film: StarWars?) {
-        self.view = view
+    init(router: RouterProtocol, film: StarWars?) {
         self.film = film
         self.router = router
     }
@@ -34,10 +33,10 @@ final class DetailPresenter {
 
 // MARK: - Реализация протокола
 extension DetailPresenter: DetailViewPresenterProtocol {
-    func setFilm() {
+    func configured() {
         self.view?.setFilm(film: film)
     }
-    func tap() {
+    func returnToList() {
         router?.popToRoot()
     }
 }
