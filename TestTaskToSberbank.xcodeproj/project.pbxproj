@@ -24,6 +24,7 @@
 		9735FFE324F98EBD001752DC /* StackCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE224F98EBD001752DC /* StackCoreData.swift */; };
 		9735FFE724FA6831001752DC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE624FA6831001752DC /* DataProvider.swift */; };
 		9735FFE924FA77B2001752DC /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735FFE824FA77B2001752DC /* MainTableViewController.swift */; };
+		97BA18D624FBDF4F0078E457 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA18D524FBDF4F0078E457 /* Tips.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9735FFE224F98EBD001752DC /* StackCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoreData.swift; sourceTree = "<group>"; };
 		9735FFE624FA6831001752DC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		9735FFE824FA77B2001752DC /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		97BA18D524FBDF4F0078E457 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				9706EE5024F9744E00653AAA /* AppDelegate.swift */,
 				9706EE5224F9744E00653AAA /* SceneDelegate.swift */,
+				97BA18D524FBDF4F0078E457 /* Tips.swift */,
 				9706EE6A24F9753000653AAA /* Builder */,
 				9706EE6724F9750D00653AAA /* Navigations */,
 				9735FFE124F98EA3001752DC /* ModelManager */,
@@ -263,6 +266,7 @@
 				9706EE5124F9744E00653AAA /* AppDelegate.swift in Sources */,
 				9735FFE924FA77B2001752DC /* MainTableViewController.swift in Sources */,
 				9706EE6924F9752100653AAA /* Router.swift in Sources */,
+				97BA18D624FBDF4F0078E457 /* Tips.swift in Sources */,
 				9735FFE324F98EBD001752DC /* StackCoreData.swift in Sources */,
 				9706EE7A24F9767E00653AAA /* DetailPresenter.swift in Sources */,
 				9706EE7324F975DE00653AAA /* MainPresenter.swift in Sources */,

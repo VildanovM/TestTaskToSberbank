@@ -10,8 +10,10 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
-    public var titleName = UILabel()
+    // MARK: - Свойства
+    var titleName = UILabel()
     static let reusedId = "reusedId"
+    // MARK: - Приватные cвойства
     private let icon = UIImageView(image: UIImage(named: "r2d2.png"))
     
     override func awakeFromNib() {

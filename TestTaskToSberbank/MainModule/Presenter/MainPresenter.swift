@@ -9,36 +9,32 @@
 import Foundation
 import CoreData
 
-protocol MainViewProtocol: AnyObject {
-    
-    func success()
-    func failure(error: Error)
-    
-}
-
 protocol MainViewPresenterProtocol: AnyObject {
-    var dataProvider: DataProvider? { get set }
+    var dataProvider: DataProviderProtocol? { get set }
     func getFilms()
-    var films: [StarWars]? { get set }
     func tapOnTheFilm(film: StarWars?)
     
 }
 
-class MainPresenter: MainViewPresenterProtocol {
+class MainPresenter {
     
-    var dataProvider: DataProvider?
-    
-    
-    
-    var films: [StarWars]?
+    // MARK: - Свойства
+    var dataProvider: DataProviderProtocol?
     var router: RouterProtocol?
-    weak var view: MainViewProtocol?
+    // MARK: - weak Свойство
+    weak var view: MainTableViewController?
     
-    required init(view: MainViewProtocol, dataProvider: DataProvider, router: RouterProtocol) {
+    init(view: MainTableViewController?, dataProvider: DataProviderProtocol?, router: RouterProtocol) {
         self.view = view
         self.router = router
         self.dataProvider = dataProvider
     }
+    
+    
+}
+
+// MARK: - Реализация протокола
+extension MainPresenter: MainViewPresenterProtocol {
     
     func tapOnTheFilm(film: StarWars?) {
         router?.showDetail(film: film)
@@ -47,9 +43,10 @@ class MainPresenter: MainViewPresenterProtocol {
     func getFilms() {
         guard let dataProvider = dataProvider else { return }
         dataProvider.fetchFilms { (error) in
-            // Handle Error by displaying it in UI
+            
         }
     }
+    
 }
 
 

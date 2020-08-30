@@ -18,14 +18,15 @@ protocol AssemblyBuilderProtocol {
 }
 
 class AssemblyModelBuilder: AssemblyBuilderProtocol {
-
+    
     func createMainModule(router: RouterProtocol) -> UITableViewController {
         
         let view = MainTableViewController()
-        let persistentContainer = StackCoreData.shared.persistentContainer
-        let dataProvider = DataProvider(persistentContainer: persistentContainer, repository: NetworkService.shared)
+        let stackCoreData = StackCoreData()
+        let networkService = NetworkService()
+        let dataProvider = DataProvider(persistentContainer: stackCoreData.persistentContainer, repository: networkService as NetworkServiceProtocol)
         
-        let presenter = MainPresenter(view: view as MainViewProtocol, dataProvider: dataProvider, router: router)
+        let presenter = MainPresenter(view: view, dataProvider: dataProvider as DataProviderProtocol, router: router)
         view.presenter = presenter
         
         return view
@@ -36,8 +37,8 @@ class AssemblyModelBuilder: AssemblyBuilderProtocol {
         let view = DetailViewController()
         let presenter = DetailPresenter(view: view as DetailViewProtocol, router: router, film: film)
         view.presenter = presenter
-
+        
         return view
     }
-
+    
 }

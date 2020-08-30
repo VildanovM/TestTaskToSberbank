@@ -11,19 +11,21 @@ import Foundation
 
 let dataErrorDomain = "dataErrorDomain"
 
-enum DataErrorCode: NSInteger {
-    case networkUnavailable = 101
-    case wrongDataFormat = 102
+protocol NetworkServiceProtocol {
+    func getFilms(completion: @escaping(_ filmsDict: [[String: Any]]?, _ error: Error?) -> ())
 }
 
 class NetworkService {
     
-    private init() {}
-    static let shared = NetworkService()
-    
+    // MARK: - Приватные свойства
     private let urlSession = URLSession.shared
     private let baseURL = URL(string: "https://swapi.dev/api/")!
     
+    
+}
+
+// MARK: - Реализация протокола
+extension NetworkService: NetworkServiceProtocol {
     func getFilms(completion: @escaping(_ filmsDict: [[String: Any]]?, _ error: Error?) -> ()) {
         let filmURL = baseURL.appendingPathComponent("films")
         urlSession.dataTask(with: filmURL) { (data, response, error) in
@@ -49,5 +51,4 @@ class NetworkService {
             }
         }.resume()
     }
-    
 }

@@ -11,12 +11,13 @@ import CoreData
 
 class MainTableViewController: UITableViewController {
     
-    // MARK: - Public Variables
-    public var presenter: MainViewPresenterProtocol!
+    // MARK: - Свойства
+    public var presenter: MainViewPresenterProtocol?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Film> = {
         let fetchRequest = NSFetchRequest<Film>(entityName:"Film")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "episodeId", ascending:true)]
+        guard let presenter = presenter else { return NSFetchedResultsController() }
         guard let dataProvider = presenter.dataProvider else { return NSFetchedResultsController() }
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                     managedObjectContext: dataProvider.viewContext,
@@ -32,14 +33,14 @@ class MainTableViewController: UITableViewController {
         
         return controller
     }()
-    // MARK: - Private Variables
     
-
+    // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.reusedId)
         tableView.dataSource = self
         tableView.delegate = self
+        guard let presenter = presenter else { return }
         presenter.getFilms()
     }
     
@@ -47,6 +48,18 @@ class MainTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
+    
+}
+
+// MARK: - Реализация протокола
+extension MainTableViewController: NSFetchedResultsControllerDelegate {
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        tableView.reloadData()
+    }
+}
+
+extension MainTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
@@ -70,32 +83,14 @@ class MainTableViewController: UITableViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         let film = StarWars(producer: object.producer, title: object.title, director: object.director, openingCrawl: object.openingCrawl, episodeId: object.episodeId, releaseDate: dateFormatter.string(from: object.releaseDate))
+        guard let presenter = presenter else { return }
         presenter.tapOnTheFilm(film: film)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
-}
-
-
-extension MainTableViewController: NSFetchedResultsControllerDelegate {
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        tableView.reloadData()
-    }
-}
-
-extension MainTableViewController: MainViewProtocol {
-    func success() {
-        tableView.reloadData()
-    }
-
-    func failure(error: Error) {
-        print(error.localizedDescription)
-    }
-
-
+    
 }
 

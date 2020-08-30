@@ -19,8 +19,9 @@ protocol RouterProtocol: RouterMain {
     func popToRoot()
 }
 
-class Router: RouterProtocol {
+class Router {
     
+    // MARK: - Свойства
     var navigationController: UINavigationController?
     var assemblyBuilder: AssemblyBuilderProtocol?
     
@@ -29,6 +30,14 @@ class Router: RouterProtocol {
         self.assemblyBuilder = assemblyBuilder
     }
     
+    
+    
+    
+}
+
+// MARK: - Реализация протокола
+
+extension Router: RouterProtocol {
     func initialViewController() {
         if let navigationController = navigationController {
             guard let mainViewController = assemblyBuilder?.createMainModule(router: self) else { return }
@@ -38,20 +47,15 @@ class Router: RouterProtocol {
     
     func popToRoot() {
         if let navigationController = navigationController {
-                  navigationController.popToRootViewController(animated: true)
-              }
+            navigationController.popToRootViewController(animated: true)
+        }
         
     }
     
     func showDetail(film: StarWars?) {
         if let navigationController = navigationController {
             guard let detailViewController = assemblyBuilder?.createDetailModule(router: self, film: film) else { return }
-                  navigationController.pushViewController(detailViewController, animated: true)
-              }
+            navigationController.pushViewController(detailViewController, animated: true)
+        }
     }
-    
-    
-    
 }
-
-

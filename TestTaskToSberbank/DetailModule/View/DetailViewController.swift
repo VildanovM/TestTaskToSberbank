@@ -106,6 +106,7 @@ class DetailViewController: UIViewController {
     
 }
 
+// MARK: - Реализация протокола
 extension DetailViewController: DetailViewProtocol {
     func setFilm(film: StarWars?) {
         guard let film = film else { return }

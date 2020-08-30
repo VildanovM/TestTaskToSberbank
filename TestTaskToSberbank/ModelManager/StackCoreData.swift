@@ -8,14 +8,15 @@
 
 import CoreData
 
-class StackCoreData {
+protocol StackCoreDataProtocol {
+    var persistentContainer: NSPersistentContainer { get }
+}
+
+class StackCoreData: StackCoreDataProtocol {
     
-    static let shared = StackCoreData()
-    
-    private init() {}
-    
+    // MARK: - Свойства
     lazy var persistentContainer: NSPersistentContainer = {
-       let container = NSPersistentContainer(name: "Film")
+        let container = NSPersistentContainer(name: "Film")
         
         container.loadPersistentStores(completionHandler: { (_, error) in
             guard let error = error as NSError? else { return }
