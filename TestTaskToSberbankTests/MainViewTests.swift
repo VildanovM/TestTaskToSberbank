@@ -11,10 +11,12 @@ import XCTest
 class MainViewTests: XCTestCase {
 
     func testThatConfigurateWithoutPresenter() {
+        //Arrange
         let mainView = MainTableViewController()
-        
+        //Act
         mainView.viewDidLoad()
-        XCTAssertTrue(!mainView.fetchedResultsController.accessibilityElementsHidden)
+        //Assert
+        XCTAssertFalse(mainView.fetchedResultsController.accessibilityElementsHidden)
     }
 
 }

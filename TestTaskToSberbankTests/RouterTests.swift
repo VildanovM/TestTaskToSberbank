@@ -20,7 +20,7 @@ class RouterTest: XCTestCase {
         // Act
         router.initialViewController()
         // Assert
-        XCTAssertTrue(!navigationController.viewControllers.isEmpty)
+        XCTAssertFalse(navigationController.viewControllers.isEmpty)
         
     }
     
@@ -47,7 +47,7 @@ class RouterTest: XCTestCase {
         router.showDetail(film: nil)
         router.popToRoot()
         // Assert
-        XCTAssertTrue(!navigationController.viewControllers.isEmpty)
+        XCTAssertFalse(navigationController.viewControllers.isEmpty)
     }
 
 
